@@ -1,0 +1,12 @@
+<app-slider [nombre]="'Catálogo'" [size]="'small'"></app-slider>
+
+<div class="center">
+    <section id="content">
+        <div *ngIf="parametro1 && parametro2">
+            <p>El primer parametro es:{{parametro1}}</p>
+            <p>El segundo paramatro es:{{parametro2}}</p>
+        </div>
+        <app-movies [movies]="movies"></app-movies>
+    </section>
+    <app-sidebar></app-sidebar>
+</div>

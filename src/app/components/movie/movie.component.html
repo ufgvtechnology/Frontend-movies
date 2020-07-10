@@ -1,0 +1,27 @@
+<div class="center">
+    <section id="content">
+
+        <h1 class="subheader">Película</h1>
+        <article class="article-item article-detail" *ngIf="movie">
+            <div class="image-wrap">
+                <img src="{{url+ 'get-image/' +movie.image}}" alt="{{movie.title}}" *ngIf="movie.image" />
+                <img src="assets/images/noimage.png" alt="{{movie.title}}" *ngIf="!movie.image" />
+            </div>
+
+            <h1 class="subheader">{{movie.title}}</h1>
+            <span class="date">
+                {{movie.date | amLocale: 'es' | amTimeAgo}}
+            </span>
+            <p>Género: {{movie.genre}}</p>
+            <p>
+               Sinopsis: {{movie.synopsis}}
+            </p>
+
+
+            <a [routerLink]="['/catalogo/editar', movie._id]" class="btn btn-warning">Editar</a>
+            <a (click)="delete(movie._id)" class="btn btn-danger">Borrar</a>
+            <div class="clearfix"></div>
+        </article>
+    </section>
+    <app-sidebar></app-sidebar>
+</div>

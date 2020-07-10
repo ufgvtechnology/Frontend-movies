@@ -1,0 +1,23 @@
+<div class="loading" *ngIf="!movies">
+    Cargando...
+</div>
+
+<div class="loading" *ngIf="movies && movies.length ==0">
+    No hay películas para mostrar
+</div>
+
+<div id="movies">
+    <article *ngFor="let movie of movies" class="article-item" id="article-template">
+        <div class="image-wrap">
+            <img src="{{url+ 'get-image/' +movie.image}}" alt="{{movie.title}}" *ngIf="movie.image" />
+            <img src="assets/images/noimage.png" alt="{{movie.title}}" *ngIf="!movie.image" />
+        </div>
+        <h2>{{movie.title}}</h2>
+        <span class="date">
+            {{movie.date | amLocale: 'es' | amTimeAgo}}
+        </span>
+        <a [routerLink]="['/catalogo/movie',movie._id]">Leer más</a>
+
+        <div class="clearfix"></div>
+    </article>
+</div>
