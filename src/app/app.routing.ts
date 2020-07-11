@@ -7,6 +7,7 @@ import { CatalogoComponent} from "./components/catalogo/catalogo.component";
 import {ErrorComponent} from "./components/error/error.component";
 import { MovieComponent } from './components/movie/movie.component';
 import { SearchComponent } from './components/search/search.component';
+import {MovieNewComponent} from './components/movie-new/movie-new.component';
 
 //Array de rutas
 const appRoutes: Routes = [
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
     //{path:'catalogo/:parametro1/:parametro2', component:CatalogoComponent},
     {path:'catalogo/movie/:id', component:MovieComponent},
     {path:'buscar/:search', component:SearchComponent},
+    {path:'catalogo/crear', component:MovieNewComponent},
     { path:'**',component:ErrorComponent}
 ];
 

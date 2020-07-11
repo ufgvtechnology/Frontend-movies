@@ -4,6 +4,7 @@ export class Movie {
         public _id: string,
         public title: string,
         public genre: string,
+        public synopsis:string,
         public image: string,
         public date: any
     ){}

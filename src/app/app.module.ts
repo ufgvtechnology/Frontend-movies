@@ -4,7 +4,7 @@ import { routing, appRoutingProviders} from './app.routing';
 import { FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {MomentModule} from 'angular2-moment';
-
+import {AngularFileUploaderModule} from "angular-file-uploader";
 
 //import { EsParPipe} from './pipes/espar.pipe';
  
@@ -19,6 +19,7 @@ import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { SearchComponent } from './components/search/search.component';
+import { MovieNewComponent } from './components/movie-new/movie-new.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +33,16 @@ import { SearchComponent } from './components/search/search.component';
     CatalogoComponent,
     MoviesComponent,
     MovieComponent,
-    SearchComponent
+    SearchComponent,
+    MovieNewComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     routing,
-    MomentModule
+    MomentModule,
+    AngularFileUploaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

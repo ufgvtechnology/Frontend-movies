@@ -1,0 +1,54 @@
+<app-slider [nombre]="'Crear Película'" [size]="'small'"></app-slider>
+<div class="center">
+    <section id="content">
+        <h2 class="subheader">{{page_title}}</h2>
+
+        <form class="mid-form" #movieForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="title">Título</label>
+                <input type="text" name="title" #title="ngModel" [(ngModel)]="movie.title" required />
+            </div>
+            <small *ngIf="!title.valid && title.touched">
+                El título no es válido
+            </small>
+
+            <div class="form-group">
+                <label for="synopsis">Sinopsis</label>
+                <input type="text" name="synopsis" #synopsis="ngModel" [(ngModel)]="movie.synopsis" required />
+            </div>
+            <small *ngIf="!synopsis.valid && synopsis.touched">
+                Ingresa una sinopsis
+            </small>
+
+            <div class="form-group">
+                <label for="genre">Género</label>
+                <input type="text" name="genre" #genre="ngModel" [(ngModel)]="movie.genre" required />
+            </div>
+            <small *ngIf="!genre.valid && genre.touched">
+                Ingresa un género
+            </small>
+
+
+            <div class="form-group">
+
+                <div class="image-thumb" *ngIf="is_edit">
+                    <img src="{{url+ 'get-image/' +movie.image}}" alt="{{movie.title}}" *ngIf="movie.image" />
+                    <img src="assets/images/noimage.png" alt="{{movie.title}}" *ngIf="!movie.image" />
+                </div>
+                <angular-file-uploader [config]="afuConfig" (ApiResponse)="imageUpload($event)">
+                </angular-file-uploader>
+            </div>
+
+
+
+
+
+            <div class="clearfix"></div>
+
+            <input type="submit" value="Guardar" class="btn btn-success" [disabled]="movieForm.invalid" />
+
+        </form>
+
+    </section>
+    <app-sidebar></app-sidebar>
+</div>
