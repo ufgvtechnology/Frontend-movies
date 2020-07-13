@@ -36,12 +36,16 @@ export class MovieService {
         return this._http.get(this.url + 'search/' + searchString);
     }
 
-    create(movie):Observable <any>{
+    create(movie): Observable<any> {
 
         let params = JSON.stringify(movie);
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
-        return this._http.post(this.url+'save',params,{headers:headers});
-    
+        return this._http.post(this.url + 'save', params, { headers: headers });
 
+
+    }
+    delete(id) {
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.delete(this.url + 'movie/' + id, { headers: headers })
     }
 }

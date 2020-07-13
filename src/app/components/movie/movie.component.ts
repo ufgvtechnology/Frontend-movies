@@ -44,4 +44,17 @@ export class MovieComponent implements OnInit {
     });
   }
 
+
+  delete(id) {
+    this._movieService.delete(id).subscribe(
+      response => {
+        this._router.navigate(['/catalogo']);
+      },
+      error => {
+        console.log(error);
+        this._router.navigate(['/catalogo'])
+      }
+    );
+  }
+
 }

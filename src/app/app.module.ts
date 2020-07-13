@@ -20,6 +20,7 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { SearchComponent } from './components/search/search.component';
 import { MovieNewComponent } from './components/movie-new/movie-new.component';
+import { MovieEditComponent } from './components/movie-edit/movie-edit.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MovieNewComponent } from './components/movie-new/movie-new.component';
     MoviesComponent,
     MovieComponent,
     SearchComponent,
-    MovieNewComponent
+    MovieNewComponent,
+    MovieEditComponent
   ],
   imports: [
     BrowserModule,
